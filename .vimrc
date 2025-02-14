@@ -36,3 +36,6 @@ inoremap <C-e> <Esc>lei
 
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
+
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+" ':set list' to view whitespaces
