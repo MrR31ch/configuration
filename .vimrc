@@ -1,3 +1,4 @@
+set encoding=utf-8
 syntax on
 set number
 set ruler
@@ -34,6 +35,8 @@ inoremap <C-b> <Esc>bi
 inoremap <C-w> <Esc>lwi
 inoremap <C-e> <Esc>lei
 
+" Theme
+set bg=dark
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 
