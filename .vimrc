@@ -35,10 +35,22 @@ inoremap <C-b> <Esc>bi
 inoremap <C-w> <Esc>lwi
 inoremap <C-e> <Esc>lei
 
+" Newline without insert mode with oo
+nmap oo o<Esc>k
+nmap OO O<Esc>j
+
 " Theme
 set bg=dark
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+"let g:gruvbox_contrast_dark = 'hard'
+""colorscheme gruvbox
 
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 " ':set list' to view whitespaces
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
+" Copy and Paste with MacOS Clipboard
+vnoremap \y y:call system("pbcopy", getreg("\""))<CR>
+nnoremap \p :call setreg("\"", system("pbpaste"))<CR>p
+
+noremap YY "+y<CR>
+noremap P "+gP<CR>
+noremap XX "+x<CR>
