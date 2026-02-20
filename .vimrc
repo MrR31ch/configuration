@@ -7,7 +7,7 @@ set ignorecase
 set mouse=a
 let g:netrw_banner = 0
 " show existing tab with 4 spaces width
-set tabstop=4
+set softtabstop=-1
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
@@ -39,6 +39,22 @@ inoremap <C-e> <Esc>lei
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 
+" No copy on delete
+nnoremap d "_d
+nnoremap dd "_dd
+
+" Exit insert with jk
+inoremap jk <Esc>
+
+" Copy, Paste and Cut with MacOS Clipboard
+nnoremap y "*y
+nnoremap yy "*yy
+nnoremap p "*p
+
+vnoremap y "*y
+vnoremap p "*p
+vnoremap x "*d
+
 " Theme
 set bg=dark
 "let g:gruvbox_contrast_dark = 'hard'
@@ -46,11 +62,3 @@ set bg=dark
 
 " ':set list' to view whitespaces
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-
-" Copy and Paste with MacOS Clipboard
-vnoremap \y y:call system("pbcopy", getreg("\""))<CR>
-nnoremap \p :call setreg("\"", system("pbpaste"))<CR>p
-
-noremap YY "+y<CR>
-noremap P "+gP<CR>
-noremap XX "+x<CR>
