@@ -46,14 +46,14 @@ nnoremap dd "_dd
 " Exit insert with jk
 inoremap jk <Esc>
 
-" Copy, Paste and Cut with MacOS Clipboard
-nnoremap y "*y
-nnoremap yy "*yy
-nnoremap p "*p
+" Copy, Paste and Cut with MacOS and Manjaro KDE Clipboard
+nnoremap y "+y
+nnoremap yy "+yy
+nnoremap p "+p
 
-vnoremap y "*y
-vnoremap p "*p
-vnoremap x "*d
+vnoremap y "+y
+vnoremap p "+p
+vnoremap x "+d
 
 " Theme
 set bg=dark
