@@ -18,6 +18,7 @@ set ai
 inoremap { {}<Esc>ha
 inoremap ( ()<Esc>ha
 inoremap [ []<Esc>ha
+inoremap < <><Esc>ha
 inoremap " ""<Esc>ha
 inoremap ' ''<Esc>ha
 " In insert or command mode, move normally by using Ctrl
@@ -46,7 +47,7 @@ nnoremap dd "_dd
 " Exit insert with jk
 inoremap jk <Esc>
 
-" Copy, Paste and Cut with MacOS and Manjaro KDE Clipboard
+" Copy, Paste and Cut with MacOS Clipboard
 nnoremap y "+y
 nnoremap yy "+yy
 nnoremap p "+p
@@ -62,3 +63,19 @@ set bg=dark
 
 " ':set list' to view whitespaces
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
+" Move Selected Line
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Surround Selection with Parantheses
+xnoremap <leader>{ <ESC>`>a}<ESC>`<i{<ESC>
+xnoremap <leader>( <ESC>`>a)<ESC>`<i(<ESC>
+xnoremap <leader>[ <ESC>`>a]<ESC>`<i[<ESC>
+xnoremap <leader>< <ESC>`>a><ESC>`<i<<ESC>
+xnoremap <leader>" <ESC>`>a"<ESC>`<i"<ESC>
+xnoremap <leader>' <ESC>`>a'<ESC>`<i'<ESC>
